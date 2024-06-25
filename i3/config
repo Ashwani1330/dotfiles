@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:FuraCode Nerd Font 13
+font pango:FiraCode Nerd Font 13
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -45,13 +45,20 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# open settings
+bindsym $mod+i exec plasma-open-settings
+
 #lock i3
 bindsym $mod+Shift+x exec i3lock --color "$bg-color"
+
+# clipboard
+bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
@@ -61,7 +68,7 @@ bindsym $mod+Shift+x exec i3lock --color "$bg-color"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+d exec rofi -show run font "FuraCode Nerd Font 19"
+bindsym $mod+d exec rofi -show run font "FiraCode Nerd Font 19"
 # bindsym $mod+d exec rofi -show window -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -opacity 50 -sidebar-mode
 # bindsym $mod+d exec rofi -show run -hidebindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -fg "$text-color" R-font "System San Francisco Display 18" -scrollbar -lines 4 -font "System San Francisco Display 18" -separator-style none
 # bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
@@ -119,9 +126,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
+set $ws1 "1  "
+set $ws2 "2  "
+set $ws3 "3  "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -232,11 +239,32 @@ bar {
 
 #startup
 # exec_always --no-startup-id feh --bg-scale ~/fedora-titus/bg.jpg
+exec_always --no-startup-id lxsession & /usr/bin/lxpolkit.
 exec_always --no-startup-id feh --bg-scale ~/Downloads/Desktop-Wallpaper.jpg
 exec_always --no-startup-id picom -CGb
+# exec_always --no-startup-id megasync
 
 # Increase brightness
-bindsym XF86MonBrightnessUp exec “xbacklight -inc 5”
-
+#bindsym XF86MonBrightnessUp exec “xbacklight -inc 5”
 # Decrease brightness
-bindsym XF86MonBrighnessDown exec “xbacklight -dec 5”
+#bindsym XF86MonBrighnessDown exec “xbacklight -dec 5”
+
+# brightness settings
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
+
+# Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
+
+## Clipboard Screenshots
+bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# music control
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioStop exec mpc stop

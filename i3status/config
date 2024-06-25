@@ -1,0 +1,125 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+#  general {
+#          colors = true
+#          interval = 5
+#  }
+#  
+#  order += "ipv6"
+#  order += "wireless _first_"
+#  order += "ethernet _first_"
+#  order += "battery all"
+#  order += "disk /"
+#  order += "load"
+#  order += "memory"
+#  order += "tztime local"
+#  
+#  wireless _first_ {
+#          format_up = "W: (%quality at %essid) %ip"
+#          format_down = "W: down"
+#  }
+#  
+#  ethernet _first_ {
+#          format_up = "E: %ip (%speed)"
+#          format_down = "E: down"
+#  }
+#  
+#  battery all {
+#          format = "%status %percentage %remaining"
+#  }
+#  
+#  disk "/" {
+#          format = "%avail"
+#  }
+#  
+#  load {
+#          format = "%1min"
+#  }
+#  
+#  memory {
+#          format = "%used | %available"
+#          threshold_degraded = "1G"
+#          format_degraded = "MEMORY < %available"
+#  }
+#  
+#  tztime local {
+#          format = "%Y-%m-%d %H:%M:%S"
+#  }
+
+
+general {
+        output_format = "i3bar"
+        colors = false
+        markup = pango
+        interval = 5
+        color_good = '#2f343f'
+		color_degraded = '#ebcb8b'
+		color_bad = '#ba5e57'
+}
+
+order += "load"
+order += "cpu_temperature 0"
+order += "disk /"
+# order += "disk /home"
+order += "ethernet enp1s0"
+order += "wireless _first_"
+order += "volume master"
+order += "battery 1"
+order += "tztime local"
+
+load {
+        format = "<span background='#f59335'> 󱑼 %5min </span>"
+}
+
+cpu_temperature 0 {
+        format = "<span background='#bf616a'>  %degrees°C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+# disk "/" {
+#         format = "<span background='#fec7cd'>  %free Free </span>"
+# }
+ 
+disk "/home" {
+        format = "<span background='#a1d569'>  %free Free </span>"
+}
+
+ethernet enp1s0 {
+        format_up = "<span background='#88c0d0'> 󰈀 %ip </span>"
+        format_down = "<span background='#88c0d0'> 󰒎  </span>"
+}
+
+wireless _first_ {
+        format_up = "<span background='#b48ead'>  %essid </span>"
+        format_down = "<span background='#b48ead'> 󱚼  </span>"
+}
+
+volume master {
+        format = "<span background='#ebcb8b'>  %volume </span>"
+        format_muted = "<span background='#ebcb8b'>   </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery 1 {
+	last_full_capacity = true
+        format = "<span background='#a3be8c'>  %status %percentage </span>"
+        format_down = "No Battery"
+        status_chr = "Charging"
+        status_bat = "Battery"
+        status_unk = "Unknown"
+        status_full = "Charged"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 15
+}
+
+tztime local {
+		format = "<span background='#81a1c1'> %a %-d %b %H:%M</span>"
+}
