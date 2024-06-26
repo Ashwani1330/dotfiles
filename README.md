@@ -18,7 +18,7 @@ Compositor: `picom`
 <br>
 Terminal Emulator: `kitty`
 <br>
-Sound Server: `pulseaudio`
+Sound Server: `pipewire`
 <br>
 Font: `Fira Code Nerd Font`
 <br>
