@@ -242,6 +242,7 @@ bar {
 exec_always --no-startup-id lxsession & /usr/bin/lxpolkit.
 exec_always --no-startup-id feh --bg-scale ~/Downloads/Desktop-Wallpaper.jpg
 exec_always --no-startup-id picom -CGb
+exec_always --no-startup-id greenclip daemon
 # exec_always --no-startup-id megasync
 
 # Increase brightness
