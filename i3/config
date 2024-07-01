@@ -162,9 +162,9 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # force-open applications in paricular desired workspace
-assign [class="Google-chrome"] $ws1
+# assign [class="Google-chrome"] $ws1
 # assign [class="kitty"] $ws2
-assign [class="Thunar"] $ws3
+# assign [class="Thunar"] $ws3
 
 
 # sleeps the device (suspends the session)
