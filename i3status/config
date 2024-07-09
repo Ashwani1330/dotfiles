@@ -74,11 +74,11 @@ order += "battery 1"
 order += "tztime local"
 
 load {
-        format = "<span background='#f59335'> 󱑼 %5min </span>"
+        format = "<span background='#575669'> 󱑼 %5min </span>"
 }
 
 cpu_temperature 0 {
-        format = "<span background='#bf616a'>  %degrees°C </span>"
+        format = "<span background='#b2a6be'>  %degrees°C </span>"
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
@@ -87,12 +87,12 @@ cpu_temperature 0 {
 # }
  
 disk "/home" {
-        format = "<span background='#a1d569'>  %free Free </span>"
+        format = "<span background='#9997bc'>  %free Free </span>"
 }
 
 ethernet enp1s0 {
-        format_up = "<span background='#88c0d0'> 󰈀 %ip </span>"
-        format_down = "<span background='#88c0d0'> 󰒎  </span>"
+        format_up = "<span background='#e6c4e7'> 󰈀 %ip </span>"
+        format_down = "<span background='#e6c4e7'> 󰒎  </span>"
 }
 
 wireless _first_ {
@@ -101,7 +101,7 @@ wireless _first_ {
 }
 
 volume master {
-        format = "<span background='#ebcb8b'>  %volume </span>"
+        format = "<span background='#787599'>  %volume </span>"
         format_muted = "<span background='#ebcb8b'>   </span>"
         device = "default"
         mixer = "Master"
@@ -110,7 +110,7 @@ volume master {
 
 battery 1 {
 	last_full_capacity = true
-        format = "<span background='#a3be8c'>  %status %percentage </span>"
+        format = "<span background='#746488'>  %status %percentage </span>"
         format_down = "No Battery"
         status_chr = "Charging"
         status_bat = "Battery"
@@ -121,5 +121,5 @@ battery 1 {
 }
 
 tztime local {
-		format = "<span background='#81a1c1'> %a %-d %b %H:%M</span>"
+		format = "<span background='#5e6186'> %a %-d %b %H:%M</span>"
 }
