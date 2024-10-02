@@ -69,6 +69,8 @@ bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+d exec rofi -show run font "FiraCode Nerd Font 19"
+bindsym $mod+period exec rofi -modi emoji -show emoji
+
 # bindsym $mod+d exec rofi -show window -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -opacity 50 -sidebar-mode
 # bindsym $mod+d exec rofi -show run -hidebindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -fg "$text-color" R-font "System San Francisco Display 18" -scrollbar -lines 4 -font "System San Francisco Display 18" -separator-style none
 # bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
