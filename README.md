@@ -25,6 +25,8 @@ Font: `Fira Code Nerd Font`
 Application launcher: `rofi`
 <br>
 Clipboard tool: `greenclip`
+<br>
+Text-editor: [`Neovim`](https://github.com/Ashwani1330/Vim-Nvim)
 
 ---
 
