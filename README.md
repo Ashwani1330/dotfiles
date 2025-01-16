@@ -2,39 +2,48 @@
 
 > Window Manager : **i3**
 > <br>
-> `i3`, `i3status`, `i3lock`
+> `i3`, `i3blocks`, `i3lock`
+
 
 Main components
 ---
-Session Manager: `lxsession`
-<br>
-Screenshot tool: `maim`
-<br>
-Background: `feh`
-<br>
-Brightness control: `brightnessctl`
-<br>
-Compositor: `picom`
-<br>
-Terminal Emulator: `kitty`
-<br>
-Sound Server: `pulseaudio`
-<br>
-Font: `Fira Code Nerd Font`
-<br>
-Application launcher: `rofi`
-<br>
-Clipboard tool: `greenclip`
-<br>
-Text-editor: [`Neovim`](https://github.com/Ashwani1330/Vim-Nvim)
+
+- Background: `feh`
+  
+- Screenshot tool: `scrot`
+
+- GTK Theming: `nwg-look`
+
+- Brightness control: `brightnessctl`
+
+- Compositor: `picom`
+
+- Terminal Emulator: `kitty`
+
+- Sound Server: `pulseaudio`
+
+- Font: `Noto Sans Regular`
+
+- Application launcher: `rofi`
+
+- Clipboard tool: `greenclip`
+
+- File browser: `thunar` 
+
+- Text-editor: [`Neovim`](https://github.com/Ashwani1330/Vim-Nvim)
+
+- Notifications: `dunst`
+
+- XDG Autostart: `dex`
 
 ---
 
 
 # System Screenshots:
-![desktop](https://github.com/Ashwani1330/dotfiles/assets/84962178/db998de9-b264-4922-9dd6-723d29d133ca)
+![desktop](https://github.com/user-attachments/assets/32b078c0-d29c-4ef6-9e2d-d7f1483028c2)
 ---
-![i3_demo](https://github.com/Ashwani1330/dotfiles/assets/84962178/db667982-145d-49c5-afca-21b8efada28e)
+![i3 demo](https://github.com/user-attachments/assets/7f3adc83-7be2-4cf8-8465-71b63c737924)
+
 ---
 Peace 🕊️
 
