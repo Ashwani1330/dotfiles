@@ -1,0 +1,18 @@
+/*******************************************************
+ * ROFI configs i3 powermenu for EndeavourOS
+ * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
+ *******************************************************/
+configuration {
+    font:             "Noto Sans Regular 10";
+    show-icons:       false;
+    icon-theme:       "Qogir";
+    scroll-method:    0;
+    disable-history:  false;
+    fullscreen:       false;
+    hide-scrollbar:   true;
+    sidebar-mode:     false;
+}
+
+@import "~/.config/rofi/config.rasi"
+/* Insert theme modifications after this */
+
