@@ -74,6 +74,9 @@ output * bg ~/Pictures/od_vaporwave.png fill
     # Kill focused window
     bindsym $mod+Shift+q kill
 
+    # swaylock
+    bindsym $mod+Shift+x exec swaylock
+
     # Start your launcher
     # bindsym $mod+d exec $menu
     bindsym $mod+d exec rofi -show run

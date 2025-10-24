@@ -43,7 +43,7 @@
     "tooltip-format-connected": "{device_enumerate}"
   },
   "clock": {
-    "timezone": "Europe/Warsaw",
+    "timezone": "Asia/Kolkata",
     "tooltip": false,
     "format": "{:%H:%M:%S  -  %A, %d}",
     "interval": 1
